@@ -5,7 +5,6 @@ const helmet = require('helmet')
 const mongoSanitize = require('express-mongo-sanitize')
 const morgan = require('morgan')
 const xss = require('xss-clean')
-const ejs = require('ejs')
 
 const env = require('../configs/env')
 const { errorConverter, errorHandler } = require('../middlewares/error')

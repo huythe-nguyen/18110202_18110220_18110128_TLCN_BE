@@ -11,7 +11,7 @@ const { User } = require('../../models')
  * @param {Object} cartBody
  * @returns {Promise<Brand>}
  */
-const list = async (page,size) => {
+ const list = async (page,size,key) => {
 
     if(page){
         pages = parseInt(page);
@@ -22,13 +22,13 @@ const list = async (page,size) => {
         if(sizes<5)
             sizes = 5;
         var skips = (pages-1)*sizes;
-        const list = await Cart.find().skip(skips).limit(sizes)
+        const list = await Cart.find({state: key}).skip(skips).limit(sizes)
         return list
     }else{
         sizes = parseInt(size);
         if(sizes<5)
             sizes = 5;
-        const list = await Cart.find().limit(sizes)
+        const list = await Cart.find({state: key}).limit(sizes)
         return list
     }
 

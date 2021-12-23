@@ -7,8 +7,9 @@ router.post('/add', oderController.add)
 router.get('/:status', oderController.list)
 router.get('/', oderController.search)
 router.get('/edit/:id', oderController.view)
-router.get('/total/:state', oderController.total)
 router.put('/edit/:id', oderController.exit)
 router.get('/count/:state', oderController.count)
+router.get('/dashboard/:status', oderController.viewDashboard)
+router.get('/delivery/:status', oderController.viewState)
 
 module.exports = router

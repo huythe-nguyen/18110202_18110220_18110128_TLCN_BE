@@ -1,4 +1,5 @@
-const { number, string } = require('joi')
+const { number, string, date } = require('joi')
+const { isDate } = require('moment')
 const mongoose = require('mongoose')
 const validator = require('validator')
 
@@ -77,7 +78,17 @@ const cartSchema = mongoose.Schema(
         timeOrder: {
             type: Date,
             default: Date.now()
+        },
+        timeSucess: {
+            type: Date
+        },
+        note: {
+            type: String,
+        },
+        updates: {
+            type: Date
         }
+
     },
     {
         timestamps: true,

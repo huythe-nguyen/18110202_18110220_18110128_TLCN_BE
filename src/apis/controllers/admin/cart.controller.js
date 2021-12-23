@@ -7,7 +7,8 @@ const { Cart } = require('../../models')
 const list = catchAsync(async (req, res, next) => {
     const page = req.query.page
     const size = req.query.size
-    const List = await cartService.list(page,size)
+    const key = new RegExp(req.params.key)
+    const List = await cartService.list(page,size,key)
     res.status(httpStatus.OK).json({
         success: true,
         cart: List
