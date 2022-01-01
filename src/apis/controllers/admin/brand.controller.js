@@ -5,18 +5,22 @@ const { Brand } = require('../../models')
 
 const addBrand = catchAsync(async (req, res, next) => {
     const brand = await brandService.createBrand(req.body)
-    res.status(httpStatus.CREATED).json({
-        success: true,
-        brands: brand
-    });
+    res.status(httpStatus.CREATED).send(brand)
 })
 const listBrand = catchAsync(async (req, res, next) => {
     const page = req.query.page
     const size = req.query.size
     const List = await brandService.view(page,size)
+
     res.status(httpStatus.OK).json({
         success: true,
         brands: List
+    });
+})
+const parinato = catchAsync(async (req, res) => {
+    const lengthOrigin = (await Brand.find()).length;
+    res.status(httpStatus.OK).json({
+        counts: lengthOrigin
     });
 })
 const list = catchAsync(async (req, res, next) => {
@@ -28,7 +32,8 @@ const list = catchAsync(async (req, res, next) => {
 })
 const search = catchAsync(async (req, res, next) => {
     const key = new RegExp(req.params.key)
-    const list = await brandService.search(key)
+    const size = req.query.size
+    const list = await brandService.search(key,size)
     res.status(httpStatus.OK).json({
         success: true,
         brands: list
@@ -84,5 +89,6 @@ module.exports = {
     exitBrand,
     deleteBrand,
     search,
-    list
+    list,
+    parinato
 }

@@ -34,8 +34,8 @@ const { User } = require('../../models')
 
 
 }
-const search = async (key) => {
-    const list = await Cart.find({$text: {$search: key}});
+const search = async (key,size) => {
+    const list = await Cart.find({$text: {$search: key}}).limit(size)
     return list
 }
 

@@ -4,6 +4,7 @@ const validate = require('../../../middlewares/validate')
 
 const router = express.Router()
 router.get('/', cartController.list)
+router.get('/count', cartController.parinato)
 router.get('/:key', cartController.search)
 router.get('/detail/:id', cartController.view)
 

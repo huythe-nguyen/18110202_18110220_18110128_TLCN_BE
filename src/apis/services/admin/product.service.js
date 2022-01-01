@@ -40,8 +40,8 @@ const listProduct = async (page,size) => {
 
 
 }
-const searchProduct = async (key) => {
-    const listproduct = await Product.find({$text: {$search: key } });
+const searchProduct = async (key,size) => {
+    const listproduct = await Product.find({$text: {$search: key } }).limit(size)
     return listproduct
 }
 const filterPrice = async (min,max) => {

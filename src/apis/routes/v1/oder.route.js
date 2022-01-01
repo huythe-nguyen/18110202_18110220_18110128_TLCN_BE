@@ -11,5 +11,4 @@ router.put('/edit/:id', oderController.exit)
 router.get('/count/:state', oderController.count)
 router.get('/dashboard/:status', oderController.viewDashboard)
 router.get('/delivery/:status', oderController.viewState)
-
 module.exports = router

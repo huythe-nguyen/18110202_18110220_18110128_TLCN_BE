@@ -5,6 +5,8 @@ module.exports.newController = require('./admin/new.controller')
 module.exports.userController = require('./admin/user.controller')
 module.exports.oderController = require('./admin/oder.controller')
 module.exports.cartController = require('./admin/cart.controller')
+module.exports.discountController = require('./admin/discount.controller')
+module.exports.reviewsController = require('./admin/reviews.controller')
 
 
 module.exports.authControllerUser = require('./client/auth-controller')

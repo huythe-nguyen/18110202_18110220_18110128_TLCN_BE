@@ -89,6 +89,7 @@ const total = catchAsync(async (req, res) => {
         count: list
     });
 })
+
 module.exports = {
     add,
     list,

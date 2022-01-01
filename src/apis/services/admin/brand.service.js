@@ -10,7 +10,7 @@ const { Brand } = require('../../models')
  * @returns {Promise<Brand>}
  */
 const createBrand = async (brandBody) => {
-    if (await Brand.isCodeTaken(brandBody.nameBrand)) {
+    if (await Brand.isCodeTaken(brandBody.codeBrand)) {
         throw new ApiError(httpStatus.BAD_REQUEST, 'Brand already taken')
     }
     return Brand.create(brandBody)
@@ -25,13 +25,13 @@ const view = async (page,size) => {
         if(sizes<5)
             sizes = 5;
         var skips = (pages-1)*sizes;
-        const list = await Brand.find({state:"Đang kinh doanh"}).skip(skips).limit(sizes)
+        const list = await Brand.find().skip(skips).limit(sizes)
         return list
     }else{
         sizes = parseInt(size);
         if(sizes<5)
             sizes = 5;
-        const list = await Brand.find({state:"Đang kinh doanh"}).limit(sizes)
+        const list = await Brand.find().limit(sizes)
         return list
     }
 
@@ -40,8 +40,8 @@ const list = async () => {
     const list = await Brand.find();
     return list;
 }
-const search = async (key) => {
-    const list = await Brand.find({$text: {$search: key}});
+const search = async (key,size) => {
+    const list = await Brand.find({$text: {$search: key}}).limit(size);
     if (list==0) {
         throw new ApiError(httpStatus.NOT_FOUND, 'No Brand')
     }

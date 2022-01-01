@@ -10,6 +10,7 @@ const addNew = catchAsync(async (req, res) => {
         news: news
     });
 })
+
 const listNew = catchAsync(async (req, res) => {
     const page = req.query.page
     const size = req.query.size
@@ -24,6 +25,12 @@ const list = catchAsync(async (req, res) => {
     res.status(httpStatus.OK).json({
         success: true,
         news: listNew
+    });
+})
+const parinato = catchAsync(async (req, res) => {
+    const lengthOrigin = (await New.find()).length;
+    res.status(httpStatus.OK).json({
+        counts: lengthOrigin
     });
 })
 const search = catchAsync(async (req, res, next) => {
@@ -85,5 +92,6 @@ module.exports = {
     exitNew,
     deleteNew,
     search,
-    list
+    list,
+    parinato
 }

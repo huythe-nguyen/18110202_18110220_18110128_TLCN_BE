@@ -20,9 +20,16 @@ const listProduct = catchAsync(async (req, res, next) => {
         product: productList
     });
 })
+const parinato = catchAsync(async (req, res) => {
+    const lengthOrigin = (await Product.find()).length;
+    res.status(httpStatus.OK).json({
+        counts: lengthOrigin
+    });
+})
 const searchProduct = catchAsync(async (req, res, next) => {
     const key = new RegExp(req.params.key)
-    const productList = await productService.searchProduct(key)
+    const size = req.query.size
+    const productList = await productService.searchProduct(key,size)
     res.status(httpStatus.OK).json({
         success: true,
         product: productList
@@ -74,5 +81,6 @@ module.exports = {
     exitProduct,
     deleteProduct,
     searchProduct,
-    filterPrice
+    filterPrice,
+    parinato
 }

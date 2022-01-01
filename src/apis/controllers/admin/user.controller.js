@@ -42,9 +42,16 @@ const update = catchAsync(async (req, res) => {
         employee: users
     });
 })
+const parinato = catchAsync(async (req, res) => {
+    const lengthOrigin = (await User.find()).length;
+    res.status(httpStatus.OK).json({
+        counts: lengthOrigin
+    });
+})
 module.exports = {
     listUser,
     search,
     detail,
-    update
+    update,
+    parinato
 }

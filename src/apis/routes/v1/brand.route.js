@@ -8,6 +8,7 @@ const router = express.Router()
 
 router.post('/add', validate(brandValidation.brandSchema), brandController.addBrand)
 router.get('/', brandController.listBrand)
+router.get('/count', brandController.parinato)
 router.get('/list', brandController.list)
 router.get('/:key', brandController.search)
 router.get('/edit/:id', brandController.viewBrand)
