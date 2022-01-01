@@ -19,7 +19,7 @@ const env = {
     isTest: process.env.NODE_ENV === 'test',
     isDevelopment: process.env.NODE_ENV === 'development',
     app: {
-        name: getOsEnv('APP_NAME'),
+        name:'shopgiay-be-tlcn',
         version: pkg.version,
         description: pkg.description,
         host: getOsEnv('APP_HOST'),
