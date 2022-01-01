@@ -6,7 +6,7 @@
     "license": "MIT",
     "scripts": {
         "dev": "cross-env NODE_ENV=development nodemon src/app.js",
-        "start:prod": "cross-env NODE_ENV=production nodemon src/app.js"
+        "start": "cross-env NODE_ENV=production nodemon src/app.js"
     },
     "dependencies": {
         "axios": "^0.24.0",
@@ -58,8 +58,7 @@
         "eslint-plugin-security": "^1.4.0",
         "nodemon": "^2.0.12",
         "prettier": "^2.3.2"
-    }
-    ,
+    },
     "lint-staged": {
         "*.{js,json}": "eslint --fix"
     },
