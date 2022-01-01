@@ -25,7 +25,7 @@ const env = {
         host: getOsEnv('APP_HOST'),
         schema: getOsEnv('APP_SCHEMA'),
         routePrefix: getOsEnv('APP_ROUTE_PREFIX'),
-        port: normalizePort(process.env.PORT || getOsEnv('APP_PORT')),
+        port: normalizePort(process.env.PORT || 3000),
         banner: toBool(getOsEnv('APP_BANNER')),
     },
     database: {
