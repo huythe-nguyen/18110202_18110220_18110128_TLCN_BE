@@ -58,7 +58,7 @@ const viewDashboard = async (page, size, key, day) => {
             sizes = parseInt(size);
             if (sizes < 5)
                 sizes = 5;
-            const list = await Cart.find({ state: key, timeOrder: { '$gte': today, '$lte': tomorrow } }).limit(sizes)
+            const list = await Cart.find({ state: key, updatedAt: { '$gte': today, '$lte': tomorrow } }).limit(sizes)
             return list
         }
     } else {
@@ -76,13 +76,13 @@ const viewDashboard = async (page, size, key, day) => {
             if (sizes < 5)
                 sizes = 5;
             var skips = (pages - 1) * sizes;
-            const list = await Cart.find({ state: key, timeOrder: { '$gte': today, '$lte': tomorrow } }).skip(skips).limit(sizes)
+            const list = await Cart.find({ state: key, updatedAt: { '$gte': today, '$lte': tomorrow } }).skip(skips).limit(sizes)
             return list
         } else {
             sizes = parseInt(size);
             if (sizes < 5)
                 sizes = 5;
-            const list = await Cart.find({ state: key, timeOrder: { '$gte': today, '$lte': tomorrow } }).limit(sizes)
+            const list = await Cart.find({ state: key, updatedAt: { '$gte': today, '$lte': tomorrow } }).limit(sizes)
             return list
         }
     }
