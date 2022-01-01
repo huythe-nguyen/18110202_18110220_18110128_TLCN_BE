@@ -3,7 +3,6 @@
     "description": "A delightful way to building a Node.js RESTful API Services with beautiful code written in Vanilla Javascript",
     "version": "1.0.0",
     "main": "index.js",
-    "author": "Sky Albert <trantoan.fox.97@gmail.com>",
     "license": "MIT",
     "scripts": {
         "dev": "cross-env NODE_ENV=development nodemon src/app.js",
@@ -23,7 +22,6 @@
         "express-basic-auth": "^1.2.0",
         "express-mongo-sanitize": "^2.1.0",
         "express-rate-limit": "^5.3.0",
-        "express-status-monitor": "trantoan960/express-status-monitor",
         "figlet": "^1.5.2",
         "helmet": "^4.6.0",
         "html-to-text": "^8.1.0",
@@ -60,7 +58,8 @@
         "eslint-plugin-security": "^1.4.0",
         "nodemon": "^2.0.12",
         "prettier": "^2.3.2"
-    },
+    }
+    ,
     "lint-staged": {
         "*.{js,json}": "eslint --fix"
     },

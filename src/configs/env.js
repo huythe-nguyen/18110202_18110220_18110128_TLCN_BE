@@ -36,23 +36,23 @@ const env = {
         json: toBool(getOsEnvOptional('LOG_JSON')),
         output: getOsEnv('LOG_OUTPUT'),
     },
-    monitor: {
-        enabled: toBool(getOsEnv('MONITOR_ENABLED')),
-        route: getOsEnv('MONITOR_ROUTE'),
-        username: getOsEnv('MONITOR_USERNAME'),
-        password: getOsEnv('MONITOR_PASSWORD'),
-    },
+    // monitor: {
+    //     enabled: toBool(getOsEnv('MONITOR_ENABLED')),
+    //     route: getOsEnv('MONITOR_ROUTE'),
+    //     username: getOsEnv('MONITOR_USERNAME'),
+    //     password: getOsEnv('MONITOR_PASSWORD'),
+    // },
     passport: {
         jwtToken: getOsEnv('PASSPORT_JWT'),
         jwtAccessExpired: toNumber(getOsEnv('PASSPORT_JWT_ACCESS_EXPIRED')),
         jwtRefreshExpired: toNumber(getOsEnv('PASSPORT_JWT_REFRESH_EXPIRED')),
     },
-    swagger: {
-        enabled: toBool(getOsEnv('SWAGGER_ENABLED')),
-        route: getOsEnv('SWAGGER_ROUTE'),
-        username: getOsEnv('SWAGGER_USERNAME'),
-        password: getOsEnv('SWAGGER_PASSWORD'),
-    },
+    // swagger: {
+    //     enabled: toBool(getOsEnv('SWAGGER_ENABLED')),
+    //     route: getOsEnv('SWAGGER_ROUTE'),
+    //     username: getOsEnv('SWAGGER_USERNAME'),
+    //     password: getOsEnv('SWAGGER_PASSWORD'),
+    // },
 }
 
 module.exports = env
