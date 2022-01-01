@@ -36,23 +36,41 @@ const env = {
         json: toBool(getOsEnvOptional('LOG_JSON')),
         output: getOsEnv('LOG_OUTPUT'),
     },
+<<<<<<< HEAD
     // monitor: {
     //     enabled: toBool(getOsEnv('MONITOR_ENABLED')),
     //     route: getOsEnv('MONITOR_ROUTE'),
     //     username: getOsEnv('MONITOR_USERNAME'),
     //     password: getOsEnv('MONITOR_PASSWORD'),
     // },
+=======
+//     monitor: {
+//         enabled: toBool(getOsEnv('MONITOR_ENABLED')),
+//         route: getOsEnv('MONITOR_ROUTE'),
+//         username: getOsEnv('MONITOR_USERNAME'),
+//         password: getOsEnv('MONITOR_PASSWORD'),
+//     },
+>>>>>>> 84e33ce1cc71ad63c698b92d873e4da0a5302da5
     passport: {
         jwtToken: getOsEnv('PASSPORT_JWT'),
         jwtAccessExpired: toNumber(getOsEnv('PASSPORT_JWT_ACCESS_EXPIRED')),
         jwtRefreshExpired: toNumber(getOsEnv('PASSPORT_JWT_REFRESH_EXPIRED')),
     },
+<<<<<<< HEAD
     // swagger: {
     //     enabled: toBool(getOsEnv('SWAGGER_ENABLED')),
     //     route: getOsEnv('SWAGGER_ROUTE'),
     //     username: getOsEnv('SWAGGER_USERNAME'),
     //     password: getOsEnv('SWAGGER_PASSWORD'),
     // },
+=======
+//     swagger: {
+//         enabled: toBool(getOsEnv('SWAGGER_ENABLED')),
+//         route: getOsEnv('SWAGGER_ROUTE'),
+//         username: getOsEnv('SWAGGER_USERNAME'),
+//         password: getOsEnv('SWAGGER_PASSWORD'),
+//     },
+>>>>>>> 84e33ce1cc71ad63c698b92d873e4da0a5302da5
 }
 
 module.exports = env
