@@ -33,10 +33,10 @@ async function initApp() {
     const app = expressLoader()
 
     // monitor
-    monitorLoader(app)
+//     monitorLoader(app)
 
-    // swagger
-    swaggerLoader(app)
+//     // swagger
+//     swaggerLoader(app)
 
     // passport init
     passportLoader(app)
