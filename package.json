@@ -68,8 +68,5 @@
             "pre-commit": "prettier --write . && git add -A .",
             "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
         }
-    },
-    "engines": {
-        "node": "0.8.14"
     }
 }
