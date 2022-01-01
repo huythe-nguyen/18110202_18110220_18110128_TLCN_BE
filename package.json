@@ -2,6 +2,7 @@
     "name": "nodejs-api-boilerplate",
     "description": "A delightful way to building a Node.js RESTful API Services with beautiful code written in Vanilla Javascript",
     "version": "1.0.0",
+    "author": "Ilya",
     "main": "index.js",
     "license": "MIT",
     "scripts": {
@@ -67,5 +68,8 @@
             "pre-commit": "prettier --write . && git add -A .",
             "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
         }
+    },
+    "engines": {
+        "node": "0.8.14"
     }
 }
