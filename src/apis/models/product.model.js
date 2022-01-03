@@ -79,7 +79,8 @@ const productSchema = mongoose.Schema(
             type: Number,
             required: true,
             trim: true
-        },
+        }
+        ,
         ratingsAverage: {
             type: Number,
             default: 4.5,

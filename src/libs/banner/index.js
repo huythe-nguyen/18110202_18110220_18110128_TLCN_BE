@@ -11,7 +11,7 @@ module.exports = (log) => {
         log.info(`Environment  : ${env.node}`)
         log.info(`Version      : ${env.app.version}`)
         log.info(``)
-        log.info(`API Info     : ${route()}`)
+        log.info(`API Info     : ${route()}${env.app.routePrefix}`)
         // if (env.swagger.enabled) {
         //     log.info(`Swagger      : ${route()}${env.swagger.route}`)
         // }
