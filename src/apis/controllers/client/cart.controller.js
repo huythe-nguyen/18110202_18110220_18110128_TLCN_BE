@@ -12,7 +12,7 @@ const addCart = catchAsync(async (req, res, next) => {
         const cart = await cartUserService.createCart(req.body)
         //cart:
 
-        const url = `http://localhost:4200/tracking`;
+        const url = `https://shoes-store-tlcn.herokuapp.com/tracking`;
         await new Email(cart, url).sendCartInfo();  //cart: id, user(id), phone, address, total, displayName, email, products[]
 
         res.status(httpStatus.CREATED).json({
