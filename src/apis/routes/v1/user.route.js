@@ -6,6 +6,7 @@ const router = express.Router()
 
 router.get('/', userController.listUser)
 router.get('/:key', userController.search)
+router.get('/count', userController.parinato)
 router.get('/detail/:id', userController.detail)
 router.put('/detail/:id', userController.update)
 
