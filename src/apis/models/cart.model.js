@@ -77,7 +77,11 @@ const cartSchema = mongoose.Schema(
         timeOrder: {
             type: Date,
             default: Date.now()
-        }
+        },
+        note: {
+            type: String,
+            trim: true,
+        },
     },
     {
         timestamps: true,

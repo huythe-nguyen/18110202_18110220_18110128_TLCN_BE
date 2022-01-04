@@ -42,6 +42,8 @@ const viewDashboard = async (page, size, key, day) => {
         var today = moment().startOf('day');
         // "2018-12-05T00:00:00.00
         var tomorrow = moment(today).endOf('day');
+        console.log(today)
+        console.log(tomorrow)
         // ("2018-12-05T23:59:59.999
         if (page) {
             pages = parseInt(page);
