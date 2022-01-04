@@ -69,6 +69,7 @@ const view = catchAsync(async (req, res, next) => {
 const exit = catchAsync(async (req, res) => {
     const id = req.params.id
     const oder = await  oderService.update(id,req.body)
+    console.log(this.oder)
     res.status(httpStatus.OK).json({
         success: true,
         oder: oder
