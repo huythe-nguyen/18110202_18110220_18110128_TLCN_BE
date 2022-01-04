@@ -73,7 +73,7 @@ exports.register = catchAsync(async (req, res) => {
 
         // 3) send it to user's email
         try {
-            const resetURL = `${req.protocol}:https://shoes-store-tlcn.herokuapp.com/${resetToken}`;
+            const resetURL = `https://shoes-store-tlcn.herokuapp.com/${resetToken}`;
 
             await new Email(user, resetURL).sendWelcome();
 
@@ -219,7 +219,7 @@ exports.forgotPassword = catchAsync(async (req, res, next) => {
     // 3) send it to user's email
     try {
         //const resetURL = `${req.protocol}://${req.get('host')}/api/v1/auth/user/resetPassword/${resetToken}`;
-        const resetURL = `${req.protocol}:https://shoes-store-tlcn.herokuapp.com/resetPassword/${resetToken}`;
+        const resetURL = `https://shoes-store-tlcn.herokuapp.com/resetPassword/${resetToken}`;
         await new Email(user, resetURL).sendPasswordReset();
 
         res.status(200).json({
