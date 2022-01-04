@@ -117,7 +117,7 @@ const search = async (state,phone) => {
     const list = await Cart.find({state:state, phone: phone});
     return list
 }
-const update = async (id,oderBody) => {
+const updates = async (id,oderBody) => {
     const oders = await Cart.findById(id);
     console.log(oderBody.state)
     console.log(oderBody.note)
@@ -134,7 +134,7 @@ const update = async (id,oderBody) => {
             }
         }
     }
-    return oders.update(oderBody);
+    return oders.updateMany(oderBody);
 
 }
 
