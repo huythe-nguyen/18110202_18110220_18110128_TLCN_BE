@@ -120,7 +120,7 @@ const search = async (state,phone) => {
 const update = async (id,oderBody) => {
     const oders = await Cart.findById(id);
     console.log(oders.products)
-    console.log(oderBody.state)
+    console.log(oderBody)
     if(oderBody.state === 'cancel'){
         for (let index = 0; index < oders.products.length; index++) {
             const element = oders.products[index];
