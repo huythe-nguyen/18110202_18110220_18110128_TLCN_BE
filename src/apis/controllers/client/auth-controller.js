@@ -42,7 +42,7 @@ exports.signup = catchAsync(async (req, res) => {
     //Use this to prevent users try to register as a admin in role
     try {
         const newUser = await User.create(req.body);
-        const url = `${req.protocol}://localhost:4200/registerEmail`;
+        const url = `https://shoes-store-tlcn.herokuapp.com/registerEmail`;
         await new Email(newUser, url).sendWelcome();
         // createSendToken(newUser, 201, res);
         const user = await User.findOne({ email: req.body.email })
@@ -73,7 +73,7 @@ exports.register = catchAsync(async (req, res) => {
 
         // 3) send it to user's email
         try {
-            const resetURL = `${req.protocol}://localhost:4200/registerEmail/${resetToken}`;
+            const resetURL = `https://shoes-store-tlcn.herokuapp.com/registerEmail/${resetToken}`;
 
             await new Email(user, resetURL).sendWelcome();
 
@@ -219,7 +219,7 @@ exports.forgotPassword = catchAsync(async (req, res, next) => {
     // 3) send it to user's email
     try {
         //const resetURL = `${req.protocol}://${req.get('host')}/api/v1/auth/user/resetPassword/${resetToken}`;
-        const resetURL = `${req.protocol}://localhost:4200/resetPassword/${resetToken}`;
+        const resetURL = `https://shoes-store-tlcn.herokuapp.com/resetPassword/${resetToken}`;
         await new Email(user, resetURL).sendPasswordReset();
 
         res.status(200).json({
