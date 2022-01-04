@@ -40,6 +40,10 @@ const newSchema = mongoose.Schema(
             type: String,
             required: true,
             trim: true
+        },
+        htmlData: {
+            type: String,
+            trim: true
         }
     },
     {

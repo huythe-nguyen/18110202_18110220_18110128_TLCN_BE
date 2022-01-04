@@ -9,7 +9,8 @@ const newSchema = {
         imgs: Joi.string().required(),
         starDay: Joi.date().required(),
         endDay: Joi.date().required(),
-        state: Joi.string().required()
+        state: Joi.string().required(),
+        htmlData: Joi.string()
 
     })
 }
