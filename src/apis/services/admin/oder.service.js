@@ -134,7 +134,7 @@ const updates = async (id,oderBody) => {
             }
         }
     }
-    return oders.updateMany(oderBody);
+    return oders.update(oderBody);
 
 }
 
