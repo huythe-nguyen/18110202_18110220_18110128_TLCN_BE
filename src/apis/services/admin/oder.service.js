@@ -160,7 +160,7 @@ const counts = async (key,day) => {
 module.exports = {
     list,
     search,
-    update,
+    updates,
     counts,
     viewDashboard,
     viewState
